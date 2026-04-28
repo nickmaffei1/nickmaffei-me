@@ -135,14 +135,81 @@
     margin: 0 0 18px;
   }
 
-  .work-item, .project-item {
+  .work-item, .project-item, .career-item {
     padding: 18px 0;
     border-bottom: 1px solid var(--rule);
     transition: padding-left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .work-item:last-child, .project-item:last-child { border-bottom: none; }
-  .work-item:hover, .project-item:hover {
+  .work-item:hover, .project-item:hover, .career-item:hover {
     padding-left: 4px;
+  }
+  .career-history {
+    margin-top: 10px;
+    border-top: 1px solid var(--rule);
+  }
+  .career-history summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--label);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    transition: color 200ms ease;
+  }
+  .career-history summary::-webkit-details-marker { display: none; }
+  .career-history summary::before {
+    content: "+";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 1;
+    color: var(--label);
+    transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 200ms ease,
+                color 200ms ease,
+                background 200ms ease;
+  }
+  .career-history[open] summary::before {
+    content: "−";
+    transform: rotate(180deg);
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .career-history summary:hover {
+    color: var(--ink);
+  }
+  .career-history summary:hover::before {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .career-history[open] .career-list,
+  .career-history[open] .education-block {
+    animation: fade 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: none; }
+  }
+  .sub-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--label);
+    font-weight: 600;
+    margin: 24px 0 4px;
   }
   .title-line {
     display: flex;
@@ -272,10 +339,56 @@
   <div class="work-item">
     <div class="title-line">
       <span class="title">Great Question</span>
-      <span class="when">2023 — present</span>
+      <span class="when">Nov 2025 — present</span>
     </div>
     <p class="desc">Revenue Operations Manager. Scaling GTM systems and using AI to build process across sales, marketing, and CS.</p>
   </div>
+
+  <details class="career-history">
+    <summary>Earlier roles &amp; education</summary>
+
+    <div class="career-list">
+      <div class="career-item">
+        <div class="title-line">
+          <span class="title">Relocity</span>
+          <span class="when">Dec 2024 — Sep 2025</span>
+        </div>
+        <p class="desc">Revenue Operations Manager. Position eliminated in a company-wide layoff.</p>
+      </div>
+      <div class="career-item">
+        <div class="title-line">
+          <span class="title">Burnalong</span>
+          <span class="when">Feb 2020 — Dec 2024</span>
+        </div>
+        <p class="desc">SDR → Revenue Operations Manager → Senior Revenue Operations Manager. Helped scale through $7M Series A (2021) and acquisition by Tivity Health (2023).</p>
+      </div>
+      <div class="career-item">
+        <div class="title-line">
+          <span class="title">Education Week</span>
+          <span class="when">Aug 2019 — Feb 2020</span>
+        </div>
+        <p class="desc">Account Executive.</p>
+      </div>
+      <div class="career-item">
+        <div class="title-line">
+          <span class="title">Wonder</span>
+          <span class="when">Dec 2017 — Jul 2019</span>
+        </div>
+        <p class="desc">Senior SDR → Account Executive at AskWonder.com.</p>
+      </div>
+    </div>
+
+    <div class="education-block">
+      <h3 class="sub-label">Education</h3>
+      <div class="career-item">
+        <div class="title-line">
+          <span class="title">Mount St. Mary's University</span>
+          <span class="when">B.A. Economics</span>
+        </div>
+        <p class="desc">Men's Rugby — National Championship (NSCRO, NCAA D3 equivalent), Club President.</p>
+      </div>
+    </div>
+  </details>
 </section>
 
 <section>
