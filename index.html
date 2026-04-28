@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Nick Maffei</title>
+<meta name="description" content="Nick Maffei — product, training, and tools.">
+<meta property="og:title" content="Nick Maffei">
+<meta property="og:description" content="Nick Maffei — product, training, and tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nickmaffei.me">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%AB%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f4f4f0;
+    --card: #ffffff;
+    --ink: #0a0a0a;
+    --ink-2: #2a2a2a;
+    --label: #555;
+    --rule: #d8d8d2;
+    --accent: #2c5494;
+    --accent-bg: #eef3fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14141a;
+      --card: #1c1c22;
+      --ink: #f1f1ee;
+      --ink-2: #d8d8d4;
+      --label: #a8a8a4;
+      --rule: #2a2a30;
+      --accent: #7aa6dc;
+      --accent-bg: #1f2733;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 28px 96px;
+  }
+  header {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--label);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+  .role {
+    font-size: 17px;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  section {
+    margin: 36px 0;
+  }
+  section h2 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--label);
+    font-weight: 700;
+    margin: 0 0 14px;
+  }
+  section p {
+    font-size: 16px;
+    color: var(--ink-2);
+    margin: 0 0 14px;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: border-color 120ms ease, background 120ms ease;
+  }
+  .pill:hover {
+    border-color: var(--accent);
+    background: var(--accent-bg);
+    color: var(--accent);
+  }
+  .work-item, .project-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .work-item:last-child, .project-item:last-child { border-bottom: none; }
+  .work-item .title-line, .project-item .title-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+  .work-item .title, .project-item .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .work-item .when, .project-item .when {
+    font-size: 13px;
+    color: var(--label);
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .work-item .desc, .project-item .desc {
+    font-size: 14px;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .project-item a.title {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .project-item a.title:hover {
+    border-bottom-color: var(--accent);
+  }
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--label);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer a {
+    color: var(--label);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--accent); }
+  @media (max-width: 480px) {
+    main { padding: 40px 20px 64px; }
+    h1 { font-size: 30px; }
+    .work-item .title-line, .project-item .title-line {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="eyebrow">Baltimore, MD</div>
+  <h1>Nick Maffei</h1>
+  <p class="role"><!-- TODO: your title --> at <a href="https://greatquestion.co" style="color:inherit;">Great Question</a>. Builder, ultrarunner, hybrid athlete.</p>
+</header>
+
+<section>
+  <h2>About</h2>
+  <p>I work in product at Great Question, a B2B research platform. Outside of work I build small tools that compound, train for ultras, and try to stay close to first principles in everything from training to engineering.</p>
+  <p>Currently 26 weeks out from <a href="https://ultrasignup.com/register.aspx?did=132892" style="color:var(--accent);">Patapsco Valley 50K</a> (Oct 2026). Previously: powerlifting, mountain bike enduro, a long road through hybrid training.</p>
+</section>
+
+<section>
+  <h2>Now</h2>
+  <p>Building a personal training agent that synthesizes Strava + plan data into daily decisions. Researching family genealogy. Reading slowly through coaching frameworks (Magness, Koop, Couzens, Altini). Becoming a dad in late 2026.</p>
+</section>
+
+<section>
+  <h2>Work</h2>
+  <div class="work-item">
+    <div class="title-line">
+      <span class="title">Great Question</span>
+      <span class="when">2023 — present</span>
+    </div>
+    <p class="desc"><!-- TODO: your role + 1 line on what you do there --></p>
+  </div>
+  <!-- Add prior roles as desired -->
+</section>
+
+<section>
+  <h2>Building</h2>
+  <div class="project-item">
+    <div class="title-line">
+      <a class="title" href="#">Personal training agent</a>
+      <span class="when">2026</span>
+    </div>
+    <p class="desc">Daily Strava sync, lift tracking, and email-based coaching loop. Python + Claude API.</p>
+  </div>
+  <div class="project-item">
+    <div class="title-line">
+      <span class="title">Patapsco 50K prep</span>
+      <span class="when">Apr → Oct 2026</span>
+    </div>
+    <p class="desc">26-week race-specific block. Course-decoded from RWGS GPX, mile-by-mile pacing plan locked.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Find me</h2>
+  <div class="pills">
+    <a class="pill" href="mailto:nick@nickmaffei.me">Email</a>
+    <a class="pill" href="https://www.linkedin.com/in/nickmaffei/" rel="me">LinkedIn</a>
+    <a class="pill" href="https://github.com/nickmaffei1" rel="me">GitHub</a>
+    <a class="pill" href="https://www.strava.com/athletes/nickmaffei" rel="me"><!-- TODO: confirm Strava handle -->Strava</a>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Nick Maffei</span>
+  <a href="mailto:nick@nickmaffei.me">nick@nickmaffei.me</a>
+</footer>
+
+</main>
+</body>
+</html>
