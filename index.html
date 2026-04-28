@@ -5,150 +5,221 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Nick Maffei</title>
-<meta name="description" content="Nick Maffei — product, training, and tools.">
+<meta name="description" content="Revenue Operations Manager at Great Question. Scaling GTM with AI-built process.">
 <meta property="og:title" content="Nick Maffei">
-<meta property="og:description" content="Nick Maffei — product, training, and tools.">
+<meta property="og:description" content="Revenue Operations Manager at Great Question. Scaling GTM with AI-built process.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nickmaffei.me">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%AB%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --bg: #f4f4f0;
+    --bg: #f5f3ee;
+    --bg-tint: #efece5;
     --card: #ffffff;
     --ink: #0a0a0a;
     --ink-2: #2a2a2a;
-    --label: #555;
-    --rule: #d8d8d2;
+    --label: #6b6b65;
+    --rule: #d8d5cc;
     --accent: #2c5494;
-    --accent-bg: #eef3fa;
+    --accent-soft: rgba(44, 84, 148, 0.08);
+    --grad-1: #f5f3ee;
+    --grad-2: #ede9df;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #14141a;
-      --card: #1c1c22;
-      --ink: #f1f1ee;
-      --ink-2: #d8d8d4;
-      --label: #a8a8a4;
-      --rule: #2a2a30;
-      --accent: #7aa6dc;
-      --accent-bg: #1f2733;
+      --bg-tint: #1a1a22;
+      --card: #1c1c24;
+      --ink: #f5f3ee;
+      --ink-2: #d8d5cc;
+      --label: #9a9a92;
+      --rule: #2a2a32;
+      --accent: #8eb6e5;
+      --accent-soft: rgba(142, 182, 229, 0.12);
+      --grad-1: #14141a;
+      --grad-2: #1a1a24;
     }
   }
+
   * { box-sizing: border-box; }
-  html, body {
+
+  html { scroll-behavior: smooth; }
+
+  body {
     margin: 0;
     padding: 0;
-    background: var(--bg);
+    background:
+      radial-gradient(1200px 600px at 20% -10%, var(--grad-2), transparent),
+      var(--grad-1);
+    background-attachment: fixed;
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
-    line-height: 1.55;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
   }
+
   main {
-    max-width: 640px;
+    max-width: 660px;
     margin: 0 auto;
-    padding: 64px 28px 96px;
+    padding: 88px 32px 120px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms forwards;
   }
+  @keyframes rise {
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    main { animation: none; opacity: 1; transform: none; }
+  }
+
   header {
-    margin-bottom: 40px;
+    margin-bottom: 56px;
   }
   .eyebrow {
     font-size: 12px;
-    letter-spacing: 2px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--label);
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-weight: 500;
+    margin-bottom: 14px;
   }
   h1 {
-    font-size: 38px;
-    line-height: 1.1;
-    letter-spacing: -0.5px;
-    margin: 0 0 12px;
-    font-weight: 700;
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 100, "SOFT" 50, "WONK" 0;
+    font-weight: 500;
+    font-size: clamp(44px, 7vw, 64px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    color: var(--ink);
   }
   .role {
     font-size: 17px;
+    line-height: 1.55;
     color: var(--ink-2);
     margin: 0;
+    font-weight: 400;
+    max-width: 560px;
   }
+  .role a {
+    color: inherit;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    transition: border-color 200ms ease, color 200ms ease;
+  }
+  .role a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
   section {
-    margin: 36px 0;
+    margin: 44px 0;
   }
   section h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 14;
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--label);
-    font-weight: 700;
-    margin: 0 0 14px;
+    font-weight: 600;
+    margin: 0 0 18px;
   }
-  section p {
-    font-size: 16px;
-    color: var(--ink-2);
-    margin: 0 0 14px;
-  }
-  .pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .pill {
-    display: inline-block;
-    padding: 6px 12px;
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    font-size: 13px;
-    color: var(--ink-2);
-    text-decoration: none;
-    transition: border-color 120ms ease, background 120ms ease;
-  }
-  .pill:hover {
-    border-color: var(--accent);
-    background: var(--accent-bg);
-    color: var(--accent);
-  }
+
   .work-item, .project-item {
-    padding: 16px 0;
+    padding: 18px 0;
     border-bottom: 1px solid var(--rule);
+    transition: padding-left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .work-item:last-child, .project-item:last-child { border-bottom: none; }
-  .work-item .title-line, .project-item .title-line {
+  .work-item:hover, .project-item:hover {
+    padding-left: 4px;
+  }
+  .title-line {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 16px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
-  .work-item .title, .project-item .title {
-    font-size: 16px;
+  .title {
+    font-size: 17px;
     font-weight: 600;
     color: var(--ink);
+    letter-spacing: -0.01em;
   }
-  .work-item .when, .project-item .when {
+  .when {
     font-size: 13px;
     color: var(--label);
     flex-shrink: 0;
     font-variant-numeric: tabular-nums;
+    font-weight: 500;
   }
-  .work-item .desc, .project-item .desc {
-    font-size: 14px;
+  .desc {
+    font-size: 15px;
     color: var(--ink-2);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.55;
   }
-  .project-item a.title {
-    color: var(--accent);
+  a.title {
+    color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 280ms cubic-bezier(0.2, 0.8, 0.2, 1), color 200ms ease;
   }
-  .project-item a.title:hover {
-    border-bottom-color: var(--accent);
+  a.title:hover {
+    color: var(--accent);
+    background-size: 100% 1px;
   }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 220ms ease,
+                background 220ms ease,
+                color 220ms ease,
+                box-shadow 220ms ease;
+  }
+  .pill:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+    box-shadow: 0 4px 14px -8px var(--accent);
+  }
+
   footer {
-    margin-top: 64px;
-    padding-top: 24px;
+    margin-top: 80px;
+    padding-top: 28px;
     border-top: 1px solid var(--rule);
     font-size: 12px;
     color: var(--label);
@@ -156,16 +227,24 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
+    letter-spacing: 0.02em;
   }
   footer a {
     color: var(--label);
     text-decoration: none;
+    transition: color 200ms ease;
   }
   footer a:hover { color: var(--accent); }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
   @media (max-width: 480px) {
-    main { padding: 40px 20px 64px; }
-    h1 { font-size: 30px; }
-    .work-item .title-line, .project-item .title-line {
+    main { padding: 56px 22px 80px; }
+    h1 { letter-spacing: -0.015em; }
+    .title-line {
       flex-direction: column;
       gap: 2px;
     }
@@ -178,19 +257,8 @@
 <header>
   <div class="eyebrow">Baltimore, MD</div>
   <h1>Nick Maffei</h1>
-  <p class="role"><!-- TODO: your title --> at <a href="https://greatquestion.co" style="color:inherit;">Great Question</a>. Builder, ultrarunner, hybrid athlete.</p>
+  <p class="role">Revenue Operations Manager at <a href="https://greatquestion.co">Great Question</a> — scaling GTM and using AI to build process.</p>
 </header>
-
-<section>
-  <h2>About</h2>
-  <p>I work in product at Great Question, a B2B research platform. Outside of work I build small tools that compound, train for ultras, and try to stay close to first principles in everything from training to engineering.</p>
-  <p>Currently 26 weeks out from <a href="https://ultrasignup.com/register.aspx?did=132892" style="color:var(--accent);">Patapsco Valley 50K</a> (Oct 2026). Previously: powerlifting, mountain bike enduro, a long road through hybrid training.</p>
-</section>
-
-<section>
-  <h2>Now</h2>
-  <p>Building a personal training agent that synthesizes Strava + plan data into daily decisions. Researching family genealogy. Reading slowly through coaching frameworks (Magness, Koop, Couzens, Altini). Becoming a dad in late 2026.</p>
-</section>
 
 <section>
   <h2>Work</h2>
@@ -199,26 +267,18 @@
       <span class="title">Great Question</span>
       <span class="when">2023 — present</span>
     </div>
-    <p class="desc"><!-- TODO: your role + 1 line on what you do there --></p>
+    <p class="desc">Revenue Operations Manager. Scaling GTM systems and using AI to build process across sales, marketing, and CS.</p>
   </div>
-  <!-- Add prior roles as desired -->
 </section>
 
 <section>
   <h2>Building</h2>
   <div class="project-item">
     <div class="title-line">
-      <a class="title" href="#">Personal training agent</a>
+      <a class="title" href="https://github.com/nickmaffei1/personal-assistant">Personal training agent</a>
       <span class="when">2026</span>
     </div>
     <p class="desc">Daily Strava sync, lift tracking, and email-based coaching loop. Python + Claude API.</p>
-  </div>
-  <div class="project-item">
-    <div class="title-line">
-      <span class="title">Patapsco 50K prep</span>
-      <span class="when">Apr → Oct 2026</span>
-    </div>
-    <p class="desc">26-week race-specific block. Course-decoded from RWGS GPX, mile-by-mile pacing plan locked.</p>
   </div>
 </section>
 
@@ -228,7 +288,7 @@
     <a class="pill" href="mailto:nick@nickmaffei.me">Email</a>
     <a class="pill" href="https://www.linkedin.com/in/nickmaffei/" rel="me">LinkedIn</a>
     <a class="pill" href="https://github.com/nickmaffei1" rel="me">GitHub</a>
-    <a class="pill" href="https://www.strava.com/athletes/nickmaffei" rel="me"><!-- TODO: confirm Strava handle -->Strava</a>
+    <a class="pill" href="https://www.strava.com/athletes/nickmaffei" rel="me">Strava</a>
   </div>
 </section>
 
