@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Nick Maffei</title>
-<meta name="description" content="Revenue Operations Manager at Great Question. Scaling GTM with AI-built process.">
+<meta name="description" content="Revenue Operations Manager at Great Question. I run RevOps through an AI operating system I built in Claude Code.">
 <meta property="og:title" content="Nick Maffei">
-<meta property="og:description" content="Revenue Operations Manager at Great Question. Scaling GTM with AI-built process.">
+<meta property="og:description" content="Revenue Operations Manager at Great Question. I run RevOps through an AI operating system I built in Claude Code.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nickmaffei.me">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%AB%3C/text%3E%3C/svg%3E">
@@ -19,43 +19,41 @@
 <style>
   :root {
     --bg: #f5f3ee;
-    --bg-tint: #efece5;
     --card: #ffffff;
     --ink: #0a0a0a;
     --ink-2: #2a2a2a;
-    --label: #6b6b65;
-    --rule: #d8d5cc;
+    --label: #5f5f59;
+    --rule: #dcd9d0;
+    --rule-strong: #c4c0b5;
     --accent: #2c5494;
     --accent-soft: rgba(44, 84, 148, 0.08);
-    --grad-1: #f5f3ee;
-    --grad-2: #ede9df;
+    --bar-muted: #cfcbc0;
+    --grad-2: #ece8de;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #14141a;
-      --bg-tint: #1a1a22;
-      --card: #1c1c24;
+      --card: #1b1b23;
       --ink: #f5f3ee;
       --ink-2: #d8d5cc;
-      --label: #9a9a92;
-      --rule: #2a2a32;
+      --label: #a3a39b;
+      --rule: #2a2a33;
+      --rule-strong: #3a3a45;
       --accent: #8eb6e5;
       --accent-soft: rgba(142, 182, 229, 0.12);
-      --grad-1: #14141a;
-      --grad-2: #1a1a24;
+      --bar-muted: #3d3d48;
+      --grad-2: #1b1b26;
     }
   }
 
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
     margin: 0;
-    padding: 0;
     background:
       radial-gradient(1200px 600px at 20% -10%, var(--grad-2), transparent),
-      var(--grad-1);
+      var(--bg);
     background-attachment: fixed;
     color: var(--ink);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -66,183 +64,320 @@
     text-rendering: optimizeLegibility;
   }
 
-  main {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 88px 32px 120px;
-    opacity: 0;
-    transform: translateY(8px);
-    animation: rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms forwards;
-  }
-  @keyframes rise {
-    to { opacity: 1; transform: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    main { animation: none; opacity: 1; transform: none; }
+  a { color: inherit; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
-  header {
-    margin-bottom: 56px;
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 88px 32px 96px;
+    animation: rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms both;
   }
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--label);
-    font-weight: 500;
-    margin-bottom: 14px;
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
   }
-  .eyebrow.location {
-    margin-top: 10px;
-    margin-bottom: 18px;
-  }
+
+  /* Header */
+  header { margin-bottom: 48px; }
   h1 {
     font-family: 'Newsreader', Georgia, serif;
     font-optical-sizing: auto;
     font-variation-settings: "opsz" 60;
     font-weight: 500;
-    font-size: clamp(46px, 7.2vw, 68px);
+    font-size: clamp(44px, 7.2vw, 68px);
     line-height: 1.02;
     letter-spacing: -0.018em;
-    margin: 0 0 18px;
-    color: var(--ink);
+    margin: 0 0 12px;
+  }
+  .location {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--label);
+    font-weight: 500;
+    margin: 0 0 20px;
   }
   .role {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.55;
     color: var(--ink-2);
     margin: 0;
-    font-weight: 400;
-    max-width: 560px;
+    max-width: 580px;
   }
-  .role a {
-    color: inherit;
-    border-bottom: 1px solid var(--rule);
+  .role a, .inline-link {
     text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
     transition: border-color 200ms ease, color 200ms ease;
   }
-  .role a:hover {
+  .role a:hover, .inline-link:hover {
     color: var(--accent);
     border-bottom-color: var(--accent);
   }
 
-  section {
-    margin: 44px 0;
-  }
-  section h2 {
-    font-family: 'Inter', sans-serif;
+  /* Sections */
+  section { margin: 56px 0; }
+  h2 {
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--label);
     font-weight: 600;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
   }
 
-  .work-item, .project-item, .career-item {
-    padding: 18px 0;
-    border-bottom: 1px solid var(--rule);
-    transition: padding-left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .work-item:last-child, .project-item:last-child { border-bottom: none; }
-  .work-item:hover, .project-item:hover, .career-item:hover {
-    padding-left: 4px;
-  }
-  .career-history {
-    margin-top: 10px;
-    border-top: 1px solid var(--rule);
-  }
-  .career-history summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 16px 0;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--label);
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    user-select: none;
-    transition: color 200ms ease;
-  }
-  .career-history summary::-webkit-details-marker { display: none; }
-  .career-history summary::before {
-    content: "+";
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
+  /* Metrics strip */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--rule);
     border: 1px solid var(--rule);
-    border-radius: 50%;
-    font-size: 14px;
-    line-height: 1;
-    color: var(--label);
-    transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
-                border-color 200ms ease,
-                color 200ms ease,
-                background 200ms ease;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0;
   }
-  .career-history[open] summary::before {
-    content: "−";
-    transform: rotate(180deg);
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-soft);
+  .metric {
+    background: var(--card);
+    padding: 18px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
-  .career-history summary:hover {
+  .metric dd { margin: 0; order: -1; }
+  .metric .num {
+    font-family: 'Newsreader', Georgia, serif;
+    font-variation-settings: "opsz" 48;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums lining-nums;
     color: var(--ink);
+    white-space: nowrap;
   }
-  .career-history summary:hover::before {
-    border-color: var(--accent);
-    color: var(--accent);
+  .metric .num .arrow { color: var(--label); font-size: 0.7em; padding: 0 2px; }
+  .metric dt {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--ink-2);
+    margin-top: 8px;
   }
-  .career-history[open] .career-list,
-  .career-history[open] .education-block {
-    animation: fade 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
-  @keyframes fade {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: none; }
-  }
-  .sub-label {
-    font-family: 'Inter', sans-serif;
+  .metric .src {
+    display: block;
     font-size: 11px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--label);
-    font-weight: 600;
-    margin: 24px 0 4px;
+    margin-top: auto;
+    padding-top: 10px;
+    font-weight: 500;
   }
-  .title-line {
+  .bars {
+    display: grid;
+    gap: 3px;
+    margin-top: 10px;
+  }
+  .bars span {
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--bar-muted);
+  }
+  .bars span.now { background: var(--accent); width: 30%; }
+
+  /* Experience timeline */
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: var(--rule-strong);
+  }
+  .job {
+    position: relative;
+    padding: 0 0 28px 30px;
+  }
+  .timeline > li:last-child > .job, .timeline > li.job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--rule-strong);
+  }
+  .job.current::before {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+  .job-head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 16px;
-    margin-bottom: 6px;
+    flex-wrap: wrap;
   }
-  .title {
+  .company {
     font-size: 17px;
     font-weight: 600;
-    color: var(--ink);
     letter-spacing: -0.01em;
+    color: var(--ink);
   }
   .when {
     font-size: 13px;
     color: var(--label);
-    flex-shrink: 0;
     font-variant-numeric: tabular-nums;
     font-weight: 500;
   }
-  .desc {
+  .title {
+    display: block;
     font-size: 15px;
     color: var(--ink-2);
-    margin: 0;
-    line-height: 1.55;
+    margin: 2px 0 0;
   }
-  a.title {
-    color: var(--ink);
+  .meta {
+    font-size: 13px;
+    color: var(--label);
+    margin: 2px 0 0;
+  }
+  .impact {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .impact li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 6px 0;
+  }
+  .impact li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.72em;
+    width: 5px;
+    height: 1px;
+    background: var(--label);
+  }
+  .impact strong { color: var(--ink); font-weight: 600; }
+  .steps {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .steps li { margin: 2px 0; }
+  .steps .when { margin-left: 6px; font-size: 12px; }
+
+  /* Collapsible roles */
+  details.job summary {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+  }
+  details.job summary::-webkit-details-marker { display: none; }
+  .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--label);
+    transition: color 200ms ease;
+  }
+  .toggle::before {
+    content: "+";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 1;
+    transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+  }
+  details.job[open] .toggle::before {
+    content: "\2212";
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  details.job[open] .toggle .show { display: none; }
+  details.job:not([open]) .toggle .hide { display: none; }
+  details.job summary:hover .toggle { color: var(--ink); }
+  details.job summary:hover .toggle::before { border-color: var(--accent); color: var(--accent); }
+  details.job[open] > .body { animation: fade 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .edu {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .edu h3 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--label);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  /* Projects */
+  .projects { display: grid; gap: 14px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 20px 18px;
+    transition: border-color 220ms ease, box-shadow 220ms ease;
+  }
+  .card:hover {
+    border-color: var(--rule-strong);
+    box-shadow: 0 6px 20px -14px rgba(0, 0, 0, 0.35);
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .card h3 a {
     text-decoration: none;
     background-image: linear-gradient(var(--accent), var(--accent));
     background-size: 0% 1px;
@@ -250,16 +385,71 @@
     background-position: 0 100%;
     transition: background-size 280ms cubic-bezier(0.2, 0.8, 0.2, 1), color 200ms ease;
   }
-  a.title:hover {
-    color: var(--accent);
-    background-size: 100% 1px;
+  .card h3 a:hover { color: var(--accent); background-size: 100% 1px; }
+  .card p {
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
   }
-
-  .pills {
+  .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 6px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
   }
+  .tags li {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--label);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 2px 10px;
+  }
+  .deep {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 14px 0 0;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--rule);
+    list-style: none;
+    font-size: 13px;
+  }
+  .deep a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .deep a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Off the clock */
+  .off-clock figure {
+    margin: 0 0 18px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--card);
+  }
+  .off-clock figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 50% 12%;
+    transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .off-clock figure:hover img { transform: scale(1.015); }
+  .off-clock p {
+    font-size: 16px;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  /* Contact pills */
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
   .pill {
     display: inline-flex;
     align-items: center;
@@ -272,83 +462,59 @@
     font-weight: 500;
     color: var(--ink-2);
     text-decoration: none;
-    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
-                border-color 220ms ease,
-                background 220ms ease,
-                color 220ms ease,
-                box-shadow 220ms ease;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 220ms ease, background 220ms ease, color 220ms ease;
   }
-  .pill svg {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .pill:hover svg {
-    transform: scale(1.08);
-  }
+  .pill svg { width: 16px; height: 16px; flex-shrink: 0; }
   .pill:hover {
     transform: translateY(-1px);
     border-color: var(--accent);
     background: var(--accent-soft);
     color: var(--accent);
-    box-shadow: 0 4px 14px -8px var(--accent);
-  }
-
-  .off-clock figure {
-    margin: 0 0 18px;
-    overflow: hidden;
-    border-radius: 10px;
-    background: var(--card);
-    box-shadow: 0 1px 0 var(--rule);
-  }
-  .off-clock figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .off-clock figure:hover img {
-    transform: scale(1.015);
-  }
-  .off-clock p {
-    font-size: 16px;
-    color: var(--ink-2);
-    line-height: 1.6;
-    margin: 0;
   }
 
   footer {
-    margin-top: 80px;
-    padding-top: 28px;
+    margin-top: 72px;
+    padding-top: 24px;
     border-top: 1px solid var(--rule);
     font-size: 12px;
     color: var(--label);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 8px 16px;
     letter-spacing: 0.02em;
   }
-  footer a {
-    color: var(--label);
-    text-decoration: none;
-    transition: color 200ms ease;
-  }
+  footer a { color: var(--label); text-decoration: none; transition: color 200ms ease; }
   footer a:hover { color: var(--accent); }
+  footer .links { display: flex; gap: 16px; flex-wrap: wrap; }
 
-  ::selection {
-    background: var(--accent);
-    color: #fff;
+  .sr {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
   }
 
+  ::selection { background: var(--accent); color: #fff; }
+
+  @media (max-width: 640px) {
+    .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   @media (max-width: 480px) {
-    main { padding: 56px 22px 80px; }
-    h1 { letter-spacing: -0.015em; }
-    .title-line {
-      flex-direction: column;
-      gap: 2px;
+    main { padding: 56px 20px 72px; }
+    .role { font-size: 17px; }
+    section { margin: 44px 0; }
+    .metric { padding: 16px 14px 14px; }
+    .metric .num { font-size: 26px; }
+    .job-head, .card-head { flex-direction: column; gap: 0; }
+    .card { padding: 18px 16px 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
     }
+    .off-clock figure:hover img, .pill:hover { transform: none; }
   }
 </style>
 </head>
@@ -357,88 +523,203 @@
 
 <header>
   <h1>Nick Maffei</h1>
-  <div class="eyebrow location">Baltimore, MD</div>
-  <p class="role">Revenue Operations Manager at <a href="https://greatquestion.co">Great Question</a> — scaling GTM and using AI to build process.</p>
+  <p class="location">Baltimore, MD</p>
+  <p class="role">Revenue Operations Manager at <a href="https://greatquestion.co">Great Question</a>. I run revenue operations through an AI operating system I built in Claude Code.</p>
 </header>
 
-<section>
-  <h2>Work</h2>
-  <div class="work-item">
-    <div class="title-line">
-      <span class="title">Great Question</span>
-      <span class="when">Nov 2025 — present</span>
+<section aria-labelledby="by-numbers">
+  <h2 id="by-numbers">By the numbers</h2>
+  <dl class="metrics">
+    <div class="metric">
+      <dt>CRM data error rate in 7 weeks, measured daily<span class="src">Great Question</span></dt>
+      <dd>
+        <span class="num">20%<span class="arrow" aria-hidden="true">&rarr;</span><span class="sr"> to </span>6%</span>
+        <span class="bars" aria-hidden="true"><span></span><span class="now"></span></span>
+      </dd>
     </div>
-    <p class="desc">Revenue Operations Manager. Scaling GTM systems and using AI to build process across sales, marketing, and CS.</p>
-  </div>
-
-  <details class="career-history">
-    <summary>Earlier roles &amp; education</summary>
-
-    <div class="career-list">
-      <div class="career-item">
-        <div class="title-line">
-          <span class="title">Relocity</span>
-          <span class="when">Dec 2024 — Sep 2025</span>
-        </div>
-        <p class="desc">Revenue Operations Manager. Position eliminated in a company-wide layoff.</p>
-      </div>
-      <div class="career-item">
-        <div class="title-line">
-          <span class="title">Burnalong</span>
-          <span class="when">Feb 2020 — Dec 2024</span>
-        </div>
-        <p class="desc">SDR → Revenue Operations Manager → Senior Revenue Operations Manager. Helped scale through $7M Series A (2021) and acquisition by Tivity Health (2023).</p>
-      </div>
-      <div class="career-item">
-        <div class="title-line">
-          <span class="title">Education Week</span>
-          <span class="when">Aug 2019 — Feb 2020</span>
-        </div>
-        <p class="desc">Account Executive.</p>
-      </div>
-      <div class="career-item">
-        <div class="title-line">
-          <span class="title">Wonder</span>
-          <span class="when">Dec 2017 — Jul 2019</span>
-        </div>
-        <p class="desc">Senior SDR → Account Executive at AskWonder.com.</p>
-      </div>
+    <div class="metric">
+      <dt>Revenue dashboard releases in 3 months<span class="src">Great Question</span></dt>
+      <dd><span class="num">88</span></dd>
     </div>
-
-    <div class="education-block">
-      <h3 class="sub-label">Education</h3>
-      <div class="career-item">
-        <div class="title-line">
-          <span class="title">Mount St. Mary's University</span>
-          <span class="when">B.A. Economics</span>
-        </div>
-        <p class="desc">Men's Rugby — National Championship (NSCRO, NCAA D3 equivalent), Club President.</p>
-      </div>
+    <div class="metric">
+      <dt>Net-new pipeline sourced by the SDR team I built<span class="src">Burnalong</span></dt>
+      <dd><span class="num">$1.5M</span></dd>
     </div>
-  </details>
+    <div class="metric">
+      <dt>Series A, then acquisition by Tivity Health. I supported diligence for both<span class="src">Burnalong</span></dt>
+      <dd><span class="num">$7M</span></dd>
+    </div>
+  </dl>
 </section>
 
-<section>
-  <h2>Building</h2>
-  <div class="project-item">
-    <div class="title-line">
-      <a class="title" href="https://github.com/nickmaffei1/personal-assistant">Personal training agent</a>
-      <span class="when">2026</span>
+<section aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+  <ol class="timeline">
+
+    <li class="job current">
+      <div class="job-head">
+        <span class="company">Great Question</span>
+        <span class="when">Nov 2025 &ndash; Present</span>
+      </div>
+      <p class="title">Revenue Operations Manager, first RevOps hire</p>
+      <p class="meta">Remote</p>
+      <ul class="impact">
+        <li>Built the GTM systems and RevOps function from scratch: CRM, lead routing, attribution, forecasting, reporting and sales compensation.</li>
+        <li>Designed and built an AI operating system for RevOps in Claude Code: a <strong>350+ document</strong> knowledge base, persistent memory, <strong>39</strong> reusable AI skills and <strong>300+</strong> automation scripts, connected to HubSpot, Slack, Linear, Stripe and the product database.</li>
+        <li>Set the governance for AI on production data: pre-write guardrails, audit trails, rollback files, verified figures, and human approval for every outward-facing action.</li>
+        <li>Built the company revenue dashboard (Next.js, Vercel, HubSpot API) that leadership and finance use for pipeline, forecast, funnel metrics and the 2027 revenue baseline. <strong>88 releases in 3 months.</strong></li>
+        <li>Cut the CRM data error rate from <strong>20% to 6% in 7 weeks</strong>, measured daily.</li>
+        <li>Defined funnel stages, cohort conversion rates and forecast win rate with Strategic Finance, the baseline for 2027 planning.</li>
+        <li>Designed and automated BDR compensation and the monthly commission report.</li>
+      </ul>
+    </li>
+
+    <li>
+      <details class="job">
+        <summary>
+          <span class="job-head">
+            <span class="company">Relocity</span>
+            <span class="when">Dec 2024 &ndash; Sep 2025</span>
+          </span>
+          <span class="title">Manager of Revenue Operations</span>
+          <span class="toggle"><span class="show">Show impact</span><span class="hide">Hide impact</span></span>
+        </summary>
+        <div class="body">
+          <p class="meta">Remote</p>
+          <ul class="impact">
+            <li>Found critical customer data missing from the CRM. Integrated Domo with HubSpot and built a Customer Health Score to grade accounts and flag churn risk early.</li>
+            <li>Automated recurring PE reporting and improved the sales forecasting method.</li>
+            <li>Added MEDDPICC qualification and simplified deal flow.</li>
+            <li>Saved <strong>$20k</strong> by migrating from Salesforce to HubSpot.</li>
+          </ul>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="job">
+        <summary>
+          <span class="job-head">
+            <span class="company">Burnalong <span class="when">/ Tivity Health</span></span>
+            <span class="when">Feb 2020 &ndash; Dec 2024</span>
+          </span>
+          <span class="title">Sales Development to Senior Revenue Operations Manager</span>
+          <span class="toggle"><span class="show">Show impact</span><span class="hide">Hide impact</span></span>
+        </summary>
+        <div class="body">
+          <p class="meta">Baltimore, MD / Remote</p>
+          <ul class="steps">
+            <li>Senior Revenue Operations Manager <span class="when">promoted Apr 2024</span></li>
+            <li>Revenue Operations Manager</li>
+            <li>Sales Development &amp; Operations <span class="when">Feb 2020 &ndash; Feb 2021</span></li>
+          </ul>
+          <ul class="impact">
+            <li>Owned operating-metric reporting for VC and PE cadences. Supported multiple diligence rounds leading to a <strong>$7M Series A</strong> (Mar 2021) and acquisition by Tivity Health (Mar 2023).</li>
+            <li>Renegotiated SaaS contracts to save <strong>$100k+</strong> during the acquisition.</li>
+            <li>Owned the post-acquisition CRM migration from HubSpot to Salesforce, and led the move from Google Workspace to Microsoft 365.</li>
+            <li>Led territory planning, a named-account GTM motion, MEDDPICC and capacity planning.</li>
+            <li>Built waterfall reporting with marketing and redesigned inbound lead flow.</li>
+            <li>Worked with 4 VPs of Sales across a 35-person team.</li>
+            <li>Built the SDR motion from the ground up, scaled the team from <strong>0 to 5</strong> in FY2020, and sourced <strong>$1.5M</strong> in net-new pipeline.</li>
+          </ul>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="job">
+        <summary>
+          <span class="job-head">
+            <span class="company">Education Week</span>
+            <span class="when">Aug 2019 &ndash; Feb 2020</span>
+          </span>
+          <span class="title">Account Executive, Enterprise Solutions</span>
+          <span class="toggle"><span class="show">Show impact</span><span class="hide">Hide impact</span></span>
+        </summary>
+        <div class="body">
+          <p class="meta">Bethesda, MD</p>
+          <ul class="impact">
+            <li>Generated <strong>$51,500</strong> in ARR.</li>
+            <li>Redesigned the prospecting workflow and wrote the sales playbook.</li>
+          </ul>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="job">
+        <summary>
+          <span class="job-head">
+            <span class="company">Wonder <span class="when">/ AskWonder.com</span></span>
+            <span class="when">Oct 2017 &ndash; Jul 2019</span>
+          </span>
+          <span class="title">Sales Development Representative, then Account Executive</span>
+          <span class="toggle"><span class="show">Show impact</span><span class="hide">Hide impact</span></span>
+        </summary>
+        <div class="body">
+          <p class="meta">New York, NY</p>
+          <ul class="impact">
+            <li>As AE, generated <strong>$111,600</strong> in ARR and built collateral, sales process and automations for the AE team.</li>
+            <li>As SDR, ranked <strong>#1 of 10</strong>, sourced 7 net-new logos, and was picked to pilot new verticals in finance and technology.</li>
+          </ul>
+        </div>
+      </details>
+    </li>
+  </ol>
+
+  <div class="edu">
+    <h3>Education</h3>
+    <div class="job-head">
+      <span class="company">Mount St. Mary's University</span>
+      <span class="when">2013 &ndash; 2017</span>
     </div>
-    <p class="desc">Daily Strava sync, lift tracking, and email-based coaching loop. Python + Claude API.</p>
+    <p class="title">B.S. in Economics</p>
+    <p class="meta">Emmitsburg, MD. National Championship, Men's D3 Rugby (NSCRO), and Club President. Economics Club, Finance Club.</p>
   </div>
 </section>
 
-<section class="off-clock">
-  <h2>Off the clock</h2>
+<section aria-labelledby="building">
+  <h2 id="building">Building</h2>
+  <div class="projects">
+    <article class="card">
+      <div class="card-head">
+        <h3><a href="https://github.com/nickmaffei1/ai-revops-os">AI RevOps OS</a></h3>
+        <span class="when">2026 &middot; GitHub</span>
+      </div>
+      <p>A public, anonymized version of how I run RevOps with Claude Code. Governance hooks that block CRM writes and outbound messages until the evidence behind them is checked, reusable skills, a memory and lessons loop, and runnable examples. All synthetic data.</p>
+      <ul class="tags" aria-label="Tags">
+        <li>Claude Code</li><li>Governance</li><li>Python</li><li>Next.js</li>
+      </ul>
+      <ul class="deep">
+        <li><a href="https://github.com/nickmaffei1/ai-revops-os/tree/main/examples/revenue-dashboard">Revenue dashboard</a></li>
+        <li><a href="https://github.com/nickmaffei1/ai-revops-os/tree/main/examples/crm-cleanup">Audited CRM cleanup</a></li>
+        <li><a href="https://github.com/nickmaffei1/ai-revops-os/tree/main/examples/win-loss-method">Win/loss method</a></li>
+        <li><a href="https://github.com/nickmaffei1/ai-revops-os/tree/main/governance">Governance hooks</a></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <h3><a href="https://github.com/nickmaffei1/free-training-analyzer-using-strava">Training analyzer</a></h3>
+        <span class="when">2026 &middot; GitHub</span>
+      </div>
+      <p>Syncs Strava activities, computes fitness, fatigue and form (CTL, ATL, TSB), ramp rate, monotony and strain, flags anomalies, and sends a weekly HTML email report. Free, local, no subscription.</p>
+      <ul class="tags" aria-label="Tags">
+        <li>Python</li><li>SQLite</li><li>Strava API</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="off-clock" aria-labelledby="off">
+  <h2 id="off">Off the clock</h2>
   <figure>
     <img src="assets/trail-run.jpg" alt="Trail running through a creek crossing at a race" loading="lazy">
   </figure>
-  <p>Outside somewhere — with my wife and dog, running or riding a mountain bike on trail, lifting in a gym, or in the kitchen cooking.</p>
+  <p>Outside somewhere with my wife and dog, running or riding a mountain bike on trail, lifting in a gym, or in the kitchen cooking.</p>
 </section>
 
-<section>
-  <h2>Find me</h2>
+<section aria-labelledby="find">
+  <h2 id="find">Find me</h2>
   <div class="pills">
     <a class="pill" href="mailto:nicholasamaffei@gmail.com">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
@@ -461,7 +742,10 @@
 
 <footer>
   <span>&copy; 2026 Nick Maffei</span>
-  <a href="mailto:nicholasamaffei@gmail.com">nicholasamaffei@gmail.com</a>
+  <span class="links">
+    <a href="mailto:nicholasamaffei@gmail.com">nicholasamaffei@gmail.com</a>
+    <a href="https://github.com/nickmaffei1/nickmaffei-me">Source</a>
+  </span>
 </footer>
 
 </main>

@@ -59,13 +59,7 @@ Cloudflare auto-deploys on push. Build takes ~10s.
 
 ## Content TODOs
 
-The HTML has `<!-- TODO -->` markers in three spots:
-
-- **Title at Great Question** (header subtitle + Work section)
-- **Work — one-liner on what you do** (1 sentence under the role)
-- **Strava handle** (confirm the URL is correct)
-
-Search the file for `TODO` and fill in.
+None open. The earlier TODO markers (title, role one-liner) are filled in. Still worth a one-time check: the Strava URL (`/athletes/nickmaffei`).
 
 ## Adding a blog later
 
